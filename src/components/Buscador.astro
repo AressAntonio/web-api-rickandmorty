@@ -1,0 +1,96 @@
+---
+---
+<!--SECCION PARA REALIZAR BUSQUEDA POR NOMBRE 
+O FILTRO DE ESTADO -->
+
+    <section class="clase1">
+        <h1>Buscador de Personaje</h1>
+        <div id="filtros">
+            <input type="text" 
+            id="filtro" placeholder="Filtro por Nombre" />
+            <select id="estado-filtro">
+                <option value="">Filtro por Estado</option>
+                <option value="alive">Vivos</option>
+                <option value="dead">Muertos</option>
+                <option value="unknow">Desconocido</option>
+    
+            </select>
+        </div>
+    </section>
+    
+    <!--SECCION CONTENEDOR PARA TARJETAS DE 
+        PERSONAJES CREADAS EN SCRIPT GLOBAL.JS-->
+    <section class="cards">
+        <div id="characters"></div>
+    </section>
+
+
+<!--ESTILOS DEL COMPONENTE BUSQUEDA -->
+<style>
+    h1{
+        font-size: 2rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+        margin-top: -10px;
+    }
+    .clase1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #filtros input, #filtros #estado-filtro{
+        padding: 8px 15px;
+        border-radius: 10px;
+        font-size: 15px;
+        margin: 8px;
+        margin-top: -20px;
+        background-color: blueviolet;
+        opacity: 90%;
+        color: #ffffff;
+        border: #ffffff 1px solid;
+    }
+    #filtros input::placeholder { 
+        color:white; 
+    }
+
+    .cards{
+      width: 100%;
+      height: auto;
+      margin-top: 15px;
+      border: blueviolet 2px solid;
+      border-radius: 10px;
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      align-self: center;
+
+    }
+
+    #characters{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .character-card{
+        width: 200px;
+        margin: 10px;
+        padding: 10px;
+        background-color: blue;
+        border: #ffffff 2px solid;
+        border-radius: 10px;
+    }
+
+</style>
+
+<!--METODOS DEL COMPONENTE -->
+<script src="../scrips/global.js"></script>
+
+  
