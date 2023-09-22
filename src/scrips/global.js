@@ -8,17 +8,20 @@ const statusFilter = document.getElementById('estado-filtro');
 /*REALIZANDO FUNCION ASINCRONA PARA QUE 
   FUNCIONE EN PARALELO AL SERVIDOR*/
 try{
-    async function getCharacters (name, status){
+    async function getCharacters (name, status, id){
 
         /*LLAMANDO A LA API RICK AND MORTI Y 
         ASIGNANDO A VARIABLE*/
         let url = 'https://rickandmortyapi.com/api/character/';
 
-        if(name||status){
+        if(name||status||id){
             url += '?';
             if(name){
                 url += `name=${name}&`;
             } 
+            if(status){
+                url += `status=${status}`;
+            }
         }
     
         /*DECLARANDO VARIABLE Y ASIGNANDO URL A ELLA 
@@ -41,11 +44,11 @@ try{
 
       /*REALIZANDO METODO QUE VA A MOSTRAR 
       ELEMENTOS DE LA API EN EL DOM*/
-    async function viewCharacters(name, status){
+    async function viewCharacters(name, status, id){
 
         /*OBTENIENDO PERSONAJES FILTRADOS DE 
         LA API EN EL METODO getCharacters*/
-        const characters = await getCharacters(name,status);
+        const characters = await getCharacters(name,status,id);
     
         charactersElm.innerHTML = '';
         /*RENDERIZANDO PERSONAJES Y 
@@ -109,7 +112,11 @@ try{
                         border: #ffffff 2px solid;
                         border-radius: 50%;
                         box-shadow: 0 0 5px rgba(10, 10, 10, 0.7);
-                        margin-left: 120px;
+                        margin-left: 115px;
+                    }
+                    img:hover{
+                        transform: scale(1.1);
+                        border: #ff9776 2px solid;
                     }
                     .nombre{
                         border: #ffffff 2px solid;
@@ -140,7 +147,12 @@ try{
     
     /*CREANDO FUNCIONALIDAD PARA BARRA DE BUSQUEDA EN EL DOM*/
     nameFilter.addEventListener('input', () => {
-        viewCharacters(nameFilter.value); 
+        viewCharacters(nameFilter.value,statusFilter.value); 
+    });
+
+    /*CREANDO FUNCIONALIDAD PARA BUSQUEDA POR FILTRO*/
+    statusFilter.addEventListener('estado-filtro', () =>{
+        viewCharacters(nameFilter.value, statusFilter.value);
     });
    
 
@@ -171,6 +183,7 @@ try{
             </style>
 
         `
+        charactersElm.appendChild(failed);
 };
   
   
