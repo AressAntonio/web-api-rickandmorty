@@ -52,3 +52,20 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## ARESSANTONIO-WEB-API-RICK AND MORTY
+<hr align="center"><a href="https://aressantonio-littleblog.netlify.app/", align="center">Ir a Proyecto.</a><hr><br>
+<table>
+ <tr>
+  <th>Vista Previa</th>
+ </tr>
+ <tr>
+   <video controls width=250, height=250, autoplay>
+    <sourse src="https://github.com/AressAntonio/web-api-rickandmorty/assets/99376135/0206ffe4-c2a4-48a4-bd01-a5d611981220"  type="video/mp4" /> 
+   </video>
+ </tr>
+</table>
+
+
+https://github.com/AressAntonio/web-api-rickandmorty/assets/99376135/0206ffe4-c2a4-48a4-bd01-a5d611981220
+
