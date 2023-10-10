@@ -2,6 +2,7 @@
 const charactersElm = document.getElementById('characters');
 const nameFilter = document.getElementById('filtro');
 const statusFilter = document.getElementById('estado-filtro');
+const cant = parseInt(document.getElementById('cant'));
 
 /*IMPLEMENTANDO METODO PARA LLAMAR A LA API RICK AND MORTY*/
 
@@ -54,7 +55,7 @@ try{
         /*RENDERIZANDO PERSONAJES Y 
         CREANDO TARJETAS DE ESTOS EN EL DOM UTILIZANDO UN LOOP*/
     
-        for(let character of characters){
+        for(let character of characters.slice(0, 5)){
          /*CREANDO ELEMENTO DIV PARA CONTENEDOR 
          PRINCIPAL DE TARJETAS CON PERSONAJES EN EL DOM*/
         
